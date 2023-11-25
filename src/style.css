@@ -17,10 +17,6 @@
 	--serif: 'Playfair Display', serif;
 }
 
-body {
-	background-color: var(--dark1);
-}
-
 li {
 	list-style: none;
 }
@@ -45,13 +41,54 @@ h4 {
 	font-weight: 500;
 }
 
+h6 {
+	font-weight: 400;
+	font-size: 0.8em;
+}
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: var(--dark1);
+}
+
+#progress-bar {
+	position: fixed;
+	top: 0;
+
+	width: 0.5rem;
+
+	background-color: var(--light1);
+
+	opacity: 1;
+
+	transition: height 0.2s ease;
+}
+
+#progress-bar::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	height: 100vmax;
+	width: 100%;
+
+	background-color: white;
+
+	content: "";
+
+	opacity: 0.1;
+}
+
 section {	
 	display: flex;
 	justify-content: space-between;
 	gap: 7.5em;
 	
-	height: 100svh;
-	height: 100vh;
+	min-height: 100svh;
+	min-height: 100vh;
 
 	margin-bottom: 40vh;
 
@@ -80,10 +117,6 @@ section {
 	max-width: 50%;
 }
 
-/* .heading {
-	position: relative;
-} */
-
 .heading h1:not(h1:first-of-type) {
 	translate: 0.4em -0.5em;
 
@@ -92,6 +125,11 @@ section {
 
 .heading * {
 	font-family: var(--serif);
+}
+
+.body {
+	display: grid;
+	gap: 1em;
 }
 
 .body p {
@@ -124,6 +162,18 @@ blockquote::after {
 
 	opacity: 0.7;
 }
+
+.image img {
+	width: 100%;
+}
+
+.image p {
+	font-weight: 200;
+}
+
+/* .image h6::before {
+	content: "Photograph By ";
+} */
 
 .lyrics {
 	position: relative;
