@@ -3,8 +3,7 @@ let end: number = 0;
 
 const bar: HTMLDivElement = document.querySelector("#progress-bar")!;
 
-const observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[], observer: IntersectionObserver) => {        
-	console.log("--------")
+const observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {        
     entries.forEach(entry => {
 
         const idx: number = parseInt(entry.target.className);
