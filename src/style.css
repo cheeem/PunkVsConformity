@@ -93,6 +93,7 @@ main, article {
 
 section {	
 	display: flex;
+	/* flex-wrap: wrap; */
 	justify-content: space-between;
 	gap: 7.5em;
 	
@@ -103,6 +104,8 @@ section {
 }
 
 .content {
+	z-index: 1;
+
 	align-self: flex-start;
 
 	position: sticky;
@@ -113,12 +116,13 @@ section {
 	gap: 3em;
 
 	height: auto;
-
 	max-width: 50%;
 }
 
 .sidebar {
-	flex: 1;
+	z-index: 2;
+
+	/* flex: 25em 1 1; */
 
 	display: flex;
 	flex-direction: column;
@@ -126,6 +130,8 @@ section {
 	gap: 3em;
 
 	max-width: 50%;
+
+	background-color: var(--dark1);
 }
 
 .heading h1:not(h1:first-of-type) {
@@ -198,13 +204,17 @@ blockquote::after {
 }
 
 .lyrics p {
+	/* overflow-y: scroll; */
+	
 	position: absolute;
 	top: 0;
 	left: 0;
 
-	font-weight: 200;
-
 	padding: 2em;
+
+	height: 100%;
+
+	font-weight: 200;
 }
 
 .lyrics h6 {
