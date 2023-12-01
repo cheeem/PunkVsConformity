@@ -180,9 +180,12 @@ blockquote::after {
 	width: 100%;
 }
 
-.image p {
-	margin-bottom: 0.2em;
+.image {
+	display: grid; 
+	gap: 0.2em;
+}
 
+.image p {
 	font-weight: 200;
 }
 
@@ -200,7 +203,7 @@ blockquote::after {
 	width: 100%;
 }
 
-.lyrics p {
+.lyrics div {
 	overflow-y: hidden;
 	/* overflow-y: scroll; */
 	
@@ -210,21 +213,19 @@ blockquote::after {
 
 	padding: 2em;
 
-	height: 85%;
+	height: 100%;
 	width: 100%;
-
-	font-weight: 200;
 }
 
 .lyrics h6 {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-
 	font-weight: 400;
-	font-size: 0.8em;
+	font-size: 1em;
 
-	padding: 2em;
+	margin-bottom: 1em;
+}
+
+.lyrics p {
+	font-weight: 200;
 }
 
 .lyrics img {
@@ -279,6 +280,10 @@ blockquote::after {
 }
 
 @media only screen and (max-aspect-ratio: 9/8) {
+
+	#progress-bar {
+		display: none;
+	}
 
 	section {
 		flex-direction: column;
