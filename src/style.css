@@ -13,8 +13,14 @@
 	--light1: white;
 	--dark1: black;
 
+	--light1filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(279deg) brightness(105%) contrast(101%);
+
 	--sans: 'Poppins', sans-serif;
 	--serif: 'Playfair Display', serif;
+
+	--side-padding: 10vw;
+	--heading-font-size: max(1vw, 1.3vh);
+	--font-size: max(1vw, 1.5vh, 0.55rem);
 }
 
 li {
@@ -23,25 +29,13 @@ li {
 
 h1 {
 	font-family: var(--serif);
-	font-size: 6em;
+	font-size: calc(var(--heading-font-size) * 6);
 	text-wrap: nowrap;
-}
-
-h2 {
-	font-family: var(--serif);
-	font-size: 4em;
-	/* text-wrap: nowrap; */
-}
-
-h3 {
-	font-family: var(--serif);
-	font-size: 2em;
-	font-weight: 500;
 }
 
 h4 {
 	font-family: var(--serif);
-	font-size: 1.5em;
+	font-size: max(calc(var(--heading-font-size) * 1.5), 1em);
 	font-weight: 500;
 }
 
@@ -57,7 +51,7 @@ html, body {
 body {
 	background-color: var(--dark1);
 
-	font-size: max(1vw, 1vh, 0.75rem);
+	font-size: var(--font-size);
 }
 
 #progress-bar {
@@ -97,14 +91,13 @@ main, article {
 
 section {	
 	display: flex;
-	/* flex-wrap: wrap; */
 	justify-content: space-between;
 	gap: 7.5em;
 	
 	/* min-height: 100svh;
 	min-height: 100vh; */
 
-	padding: 0 7.5em;
+	padding: 0 var(--side-padding);
 }
 
 .content {
@@ -134,8 +127,6 @@ section {
 	gap: 3em;
 
 	max-width: 50%;
-
-	background-color: var(--dark1);
 }
 
 .heading h1:not(h1:first-of-type) {
@@ -190,6 +181,8 @@ blockquote::after {
 }
 
 .image p {
+	margin-bottom: 0.2em;
+
 	font-weight: 200;
 }
 
@@ -244,7 +237,7 @@ blockquote::after {
 	display: grid; 
 	gap: 2em;
 
-	padding: 0 7.5em;
+	padding: 0 var(--side-padding);
 }
 
 .bibliography > div {
@@ -263,7 +256,44 @@ blockquote::after {
 	translate: 2em 0;
 }
 
+.bibliography a {
+	text-decoration: none;
+}
+
+.bibliography a:hover {
+	text-decoration: underline;
+}
+
 .bibliography cite {
+	display: inline;
+
 	font-style: normal;
 	font-weight: 200;
+}
+
+.bibliography img {
+	height: 1em;
+	width: 1em;
+
+	filter: var(--light1filter);
+	translate: 0 0.1em;
+}
+
+@media only screen and (max-aspect-ratio: 9/8) {
+
+	section {
+		flex-direction: column;
+		gap: 4em;
+
+		padding: 0 auto;
+	}
+
+	section > * {
+		min-width: 100%;
+	}
+
+	.content {
+		position: static;
+	}
+	
 }
