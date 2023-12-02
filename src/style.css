@@ -180,13 +180,14 @@ blockquote::after {
 	width: 100%;
 }
 
-.image {
-	display: grid; 
-	gap: 0.2em;
+.image img {
+	margin-bottom: 0.4em;
 }
 
 .image p {
 	font-weight: 200;
+
+	margin-bottom: 0.2em;
 }
 
 /* .image h6::before {
